@@ -1,0 +1,20 @@
+java_library_host {
+    name: "proto-google-cloud-kms-v1",
+    srcs: [
+        "src/main/**/*.java",
+    ],
+    libs: [
+        "libprotobuf-java-util-full",
+        "javax_annotation-api_1.3.2",
+        "google-api-common",
+        "proto-google-common-protos",
+    ],
+    visibility: [
+        "//external/google-cloud-java/java-kms/google-cloud-kms",
+    ],
+    target: {
+        windows: {
+            enabled: true,
+        },
+    },
+}
