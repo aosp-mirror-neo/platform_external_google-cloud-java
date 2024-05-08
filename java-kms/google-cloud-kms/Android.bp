@@ -1,0 +1,28 @@
+java_library_host {
+    name: "google-cloud-kms",
+    srcs: [
+        "src/main/**/*.java",
+    ],
+    static_libs: [
+        "libprotobuf-java-util-full",
+        "javax_annotation-api_1.3.2",
+        "google-api-common",
+        "proto-google-common-protos",
+        "proto-google-iam-v1",
+        "jsr305",
+        "guava",
+        "gax-java",
+        "gax-java-grpc",
+        "gax-java-httpjson",
+        "grpc-java",
+        "opencensus-java-api",
+        "threetenbp",
+        "proto-google-cloud-kms-v1",
+    ],
+    visibility: ["//tools/apksig"],
+    target: {
+        windows: {
+            enabled: true,
+        },
+    },
+}
