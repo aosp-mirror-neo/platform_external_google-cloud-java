@@ -1,14 +1,36 @@
 java_library_host {
     name: "proto-google-cloud-kms-v1",
+    // Sources not generated with Protobuf compiler were found with:
+    // find src -name '*.java' | xargs grep -Le 'protocol buffer compiler'
     srcs: [
-        "src/main/**/*.java",
+        "src/main/java/com/google/cloud/kms/v1/CryptoKeyName.java",
+        "src/main/java/com/google/cloud/kms/v1/CryptoKeyPathName.java",
+        "src/main/java/com/google/cloud/kms/v1/CryptoKeyVersionName.java",
+        "src/main/java/com/google/cloud/kms/v1/EkmConfigName.java",
+        "src/main/java/com/google/cloud/kms/v1/EkmConnectionName.java",
+        "src/main/java/com/google/cloud/kms/v1/ImportJobName.java",
+        "src/main/java/com/google/cloud/kms/v1/KeyName.java",
+        "src/main/java/com/google/cloud/kms/v1/KeyNames.java",
+        "src/main/java/com/google/cloud/kms/v1/KeyRingName.java",
+        "src/main/java/com/google/cloud/kms/v1/LocationName.java",
+        "src/main/java/com/google/cloud/kms/v1/UntypedKeyName.java",
+        "src/main/proto/**/*.proto",
     ],
     libs: [
-        "libprotobuf-java-util-full",
-        "javax_annotation-api_1.3.2",
         "google-api-common",
+        "javax_annotation-api_1.3.2",
+        "libprotobuf-java-util-full",
         "proto-google-common-protos",
     ],
+    proto: {
+        type: "full",
+        include_dirs: [
+            "external/google-cloud-java/java-kms/proto-google-cloud-kms-v1/src/main/proto",
+            "external/protobuf/src",
+            "external/sdk-platform-java/java-common-protos/proto-google-common-protos/src/main/proto",
+            "external/sdk-platform-java/java-iam/proto-google-iam-v1/src/main/proto",
+        ],
+    },
     visibility: [
         "//external/google-cloud-java/java-kms/google-cloud-kms",
     ],
