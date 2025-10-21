@@ -20,6 +20,9 @@ java_library_host {
         "proto-google-cloud-kms-v1",
     ],
     visibility: ["//tools/apksig"],
+    errorprone: {
+        javacflags: ["-Xep:ImpossibleNullComparison:WARN"],
+    },
     target: {
         windows: {
             enabled: true,
